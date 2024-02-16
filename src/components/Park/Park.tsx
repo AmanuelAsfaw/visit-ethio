@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Image,Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Image,Text, View, Dimensions, TouchableOpacity } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 import { ParkInterface } from '../../data/park.data';
 
@@ -8,15 +8,28 @@ interface PropsType {
   park: ParkInterface
 }
 
-export default function App({ park }:PropsType) {
+export default function ParkComponent(props : any) {
+  const { park, navigation }: { park : ParkInterface, navigation: any }= props
   console.log(`../../../assets${park.image}`);
   
   // const image = require(`../../../assets${park.image}`)
   // console.log(image);
   
+  const onPressCard = () => {
+    //NavigationProps
+    console.log(props);
+    console.log('navigation');
+    console.log(navigation);
+    
+    // navigation.navigate('Home')
+    navigation.navigate('ParkDetail', {park})
+  }
+
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+      style={styles.container}
+      onPress={() => onPressCard()}>
         <View style={{flex: 2, flexDirection: 'row'}}>
             <Image style={ styles.image} source={park.image} />
             <View style={{ flex: 3,paddingHorizontal: 5}}>
@@ -32,7 +45,7 @@ export default function App({ park }:PropsType) {
             </View>
         </View>
       <StatusBar style="auto" />
-    </View>
+    </TouchableOpacity>
   );
 }
 

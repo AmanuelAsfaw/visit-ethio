@@ -6,9 +6,10 @@ import { EventList } from '../data'
 interface PropsType{
   title: string;
   onPressSeeAll: Function;
+  navigation: any;
 }
 
-export default function App({title, onPressSeeAll}: PropsType) {
+export default function VerticalScrollItemsComponent({title, onPressSeeAll, navigation }: PropsType) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>          
@@ -24,7 +25,7 @@ export default function App({title, onPressSeeAll}: PropsType) {
       showsVerticalScrollIndicator
       >
         {
-          EventList.map((e)=> <EventComponent event={e}/>)
+          EventList.map((e)=> <EventComponent navigation={navigation} event={e}/>)
         }
       </ScrollView>  
     </View>

@@ -11,6 +11,8 @@
   "dependencies": {
     "@ant-design/react-native": "^5.0.4",
     "@expo/vector-icons": "^13.0.0",
+    "@hauvo/react-native-360-image-viewer": "^1.0.0",
+    "@lightbase/react-native-panorama-view": "^1.0.1",
     "@react-native-camera-roll/camera-roll": "^5.7.2",
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
@@ -26,7 +28,9 @@
     "react-native": "0.72.3",
     "react-native-camera": "^4.2.1",
     "react-native-dropdown-select-list": "^2.0.4",
-    "react-native-qrcode-scanner": "^1.5.5"
+    "react-native-qrcode-scanner": "^1.5.5",
+    "react-native-webview": "^13.8.1",
+    "react-photo-sphere-viewer": "^4.2.1-psv5.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

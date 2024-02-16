@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
-import { EventInterface } from '../../data/event.data';
+import { ParkInterface } from '../../data/park.data';
 import { EvilIcons, Fontisto } from '@expo/vector-icons';
 
 // import PanoramaView from "@lightbase/react-native-panorama-view";
@@ -8,12 +8,12 @@ import { EvilIcons, Fontisto } from '@expo/vector-icons';
 import { WebView } from 'react-native-webview';
 // import { PanoramaView } from 'react-native-360';
 interface PropsType {
-    event: EventInterface
+  park: ParkInterface
 }
   
-export default function EventDetail({ event }: PropsType) {
-  console.log(event);
-  console.log(`../../../assets${event.image}`);
+export default function ParkDetail({ park }: PropsType) {
+  console.log(park);
+  console.log(`../../../assets${park.image}`);
   return (
     <View style={styles.container}>
       <View style={{flex:1, flexDirection: 'column'}}>
@@ -34,22 +34,18 @@ export default function EventDetail({ event }: PropsType) {
           hidesTransitionView
           enableInfoButton={false}
         /> */}
-        <Image style={ styles.image} source={event.image} />
+        <Image style={ styles.image} source={park.image} />
         
         <View style={styles.body}>
-          <Text style={styles.name}>{event.name}</Text>
+          <Text style={styles.name}>{park.name}</Text>
           <View style={{marginLeft: 20, marginBottom: 10}}>
             <View style={styles.location}>
               <EvilIcons name="location" size={20} color="#dac111" />
-              <Text style={styles.locationText}>{event.location}</Text>
-            </View>
-            <View style={styles.date}> 
-              <Fontisto name="date" size={12} color="#ddd111" />
-              <Text style={styles.dateText}>{event.date}</Text>
+              <Text style={styles.locationText}>{park.location}</Text>
             </View>
           </View>
           
-          <Text>{event.description}</Text>
+          <Text>{park.description}</Text>
         </View>
         {/* <WebView
           style={styles.container}

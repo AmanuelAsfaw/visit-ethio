@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MuseumListComponent, ParkListComponent } from '../components';
 
-export default function App() {
+export default function MuseumAndParkScreen(props: any) {
   const [active, setActive] = useState<'museum'|'park'>('museum')
   return (
     <View style={styles.container}>
@@ -25,10 +25,10 @@ export default function App() {
             </TouchableOpacity>
         </View>
         {active === 'museum' && (
-          <MuseumListComponent/>
+          <MuseumListComponent  {...props} navigation={props.navigation}/>
         )}
         {active === 'park' && (
-          <ParkListComponent/>
+          <ParkListComponent  {...props} navigation={props.navigation}/>
         )}
       <StatusBar style="auto" />
     </View>

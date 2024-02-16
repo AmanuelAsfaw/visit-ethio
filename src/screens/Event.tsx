@@ -2,10 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { EventListComponent } from '../components';
 
-export default function App() {
+export default function App(props: any) {
   return (
     <View style={styles.container}>
-      <EventListComponent/>
+      <EventListComponent  {...props} navigation={props.navigation}/>
       <StatusBar style="auto" />
     </View>
   );

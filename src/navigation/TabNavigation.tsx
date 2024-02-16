@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { EventScreen, HomeScreen, MuseumAndParkScreen, ScannerScreen, SettingsScreen } from '../screens';
 import { AntDesign, Ionicons, MaterialIcons, Zocial } from '@expo/vector-icons';
+import { EventScreenNavigator, HomeScreenNavigator, MuseumAndParkScreenNavigator } from './StackNavigation';
 
 const Tab = createBottomTabNavigator()
 
@@ -20,7 +21,7 @@ const screenOptions = {
     }
 }
 
-export default function Tabs() {
+export default function TabNavigation() {
     const vector_components = [
       <AntDesign name="home" size={24} color="black" />,
       <MaterialIcons name="qr-code-scanner" size={24} color="black" />,
@@ -47,21 +48,21 @@ export default function Tabs() {
         <Tab.Navigator screenOptions={screenOptions}>      
             <Tab.Screen 
             name='Home' 
-            component={HomeScreen}
+            component={HomeScreenNavigator}
             options={{
                 tabBarIcon:(focused)=> TabBarIcon(focused.focused,1,'Home')
             }}
             />   
             <Tab.Screen 
             name='Museum' 
-            component={MuseumAndParkScreen}
+            component={MuseumAndParkScreenNavigator}
             options={{
                 tabBarIcon:(focused)=> TabBarIcon(focused.focused,3,'Museum')
             }}
             />     
             <Tab.Screen 
             name='Event' 
-            component={EventScreen}
+            component={EventScreenNavigator}
             options={{
                 tabBarIcon:(focused)=> TabBarIcon(focused.focused,5,'Event')
             }}

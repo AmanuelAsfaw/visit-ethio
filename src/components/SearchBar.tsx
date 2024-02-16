@@ -10,6 +10,7 @@ export default function App() {
         <TextInput
             placeholder='Find Art here'
             // value={searchText}
+            style={styles.searchBarInput}
             onChangeText={(text) => setSearchText(text)}
         />        
         <EvilIcons name="search" size={28} color="black" onPress={()=> console.log(searchText)}/>
@@ -35,10 +36,15 @@ const styles = StyleSheet.create({
         },
         elevation: 24,
 
-        paddingVertical: 6,
+        paddingVertical: 0,
         borderRadius:25,
         marginHorizontal: 10,
         paddingHorizontal: 10,
         backgroundColor: 'lightgray'
   },
+  searchBarInput: {
+    width: Dimensions.get('screen').width/1.2 - 50,
+    height: 40,
+    // zIndex: 1000,
+  }
 });

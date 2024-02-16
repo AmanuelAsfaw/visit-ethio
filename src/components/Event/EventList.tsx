@@ -8,14 +8,14 @@ interface PropsType{
   // title: string;
 }
 
-export default function App({}: PropsType) {
+export default function App(props: any) {
   return (
     <View style={styles.container}>
       <ScrollView 
       // scrollEventThrottle={16}    
       showsVerticalScrollIndicator
       >
-        {EventList.map((e) => <Event event={e}/>)}
+        {EventList.map((e) => <Event navigation={props.navigation} event={e}/>)}        
       </ScrollView>  
     </View>
   );

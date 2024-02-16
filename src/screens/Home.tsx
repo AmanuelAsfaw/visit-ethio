@@ -5,7 +5,7 @@ import { HorizontalScrollItemComponent, SearchBarComponent, VerticalScrollItemCo
 interface PropsType {
   navigation: any;
 }
-export default function App(props:  any) {
+export default function HomeScreen(props:  any) {
   const navigation = props.navigation
   const onPressSeeAll = () => {
     navigation.navigate('Museum')
@@ -19,11 +19,11 @@ export default function App(props:  any) {
     <View style={styles.container}>
       <SearchBarComponent/>
       <ScrollView style={{marginTop: 10}}>
-        <HorizontalScrollItemComponent title="Museums & Parks" onPressSeeAll={onPressSeeAll}/>
-        <VerticalScrollItemComponent title='Events' onPressSeeAll={onPressSeeAllEvent}/>
+        <HorizontalScrollItemComponent {...props} navigation={props.navigation} title="Museums & Parks" onPressSeeAll={onPressSeeAll}/>
+        <VerticalScrollItemComponent {...props} navigation={props.navigation} title='Events' onPressSeeAll={onPressSeeAllEvent}/>
       </ScrollView>
       
-      <StatusBar style="auto" />
+      <StatusBar style="auto"/>
     </View>
   );
 }

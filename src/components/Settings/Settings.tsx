@@ -10,13 +10,13 @@ export default function App() {
   const [darkTheme, setDarkTheme] = useState(false);
 
     const data = [
-        {key:'1', value:'Mobiles', disabled:true},
-        {key:'2', value:'Appliances'},
-        {key:'3', value:'Cameras'},
-        {key:'4', value:'Computers', disabled:true},
-        {key:'5', value:'Vegetables'},
-        {key:'6', value:'Diary Products'},
-        {key:'7', value:'Drinks'},
+        {key:'1', value:'Amharic', disabled:true},
+        {key:'2', value:'English'},
+        {key:'3', value:'Franch'},
+        {key:'4', value:'Dutch'},
+        {key:'5', value:'Afan-Oromo'},
+        {key:'6', value:'Somali'},
+        {key:'7', value:'Tigrinya'},
     ]
     const SelecteListInput =()=>
       (<SelectList 

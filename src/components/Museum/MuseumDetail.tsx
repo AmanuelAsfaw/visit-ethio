@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
-import { EventInterface } from '../../data/event.data';
+import { MuseumInterface } from '../../data/museum.data';
 import { EvilIcons, Fontisto } from '@expo/vector-icons';
 
 // import PanoramaView from "@lightbase/react-native-panorama-view";
@@ -8,12 +8,12 @@ import { EvilIcons, Fontisto } from '@expo/vector-icons';
 import { WebView } from 'react-native-webview';
 // import { PanoramaView } from 'react-native-360';
 interface PropsType {
-    event: EventInterface
+  museum: MuseumInterface
 }
   
-export default function EventDetail({ event }: PropsType) {
-  console.log(event);
-  console.log(`../../../assets${event.image}`);
+export default function ParkDetail({ museum }: PropsType) {
+  console.log(museum);
+  console.log(`../../../assets${museum.image}`);
   return (
     <View style={styles.container}>
       <View style={{flex:1, flexDirection: 'column'}}>
@@ -34,22 +34,18 @@ export default function EventDetail({ event }: PropsType) {
           hidesTransitionView
           enableInfoButton={false}
         /> */}
-        <Image style={ styles.image} source={event.image} />
+        <Image style={ styles.image} source={museum.image} />
         
         <View style={styles.body}>
-          <Text style={styles.name}>{event.name}</Text>
+          <Text style={styles.name}>{museum.name}</Text>
           <View style={{marginLeft: 20, marginBottom: 10}}>
             <View style={styles.location}>
               <EvilIcons name="location" size={20} color="#dac111" />
-              <Text style={styles.locationText}>{event.location}</Text>
-            </View>
-            <View style={styles.date}> 
-              <Fontisto name="date" size={12} color="#ddd111" />
-              <Text style={styles.dateText}>{event.date}</Text>
+              <Text style={styles.locationText}>{museum.location}</Text>
             </View>
           </View>
           
-          <Text>{event.description}</Text>
+          <Text>{museum.description}</Text>
         </View>
         {/* <WebView
           style={styles.container}

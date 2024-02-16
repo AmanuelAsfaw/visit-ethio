@@ -8,7 +8,7 @@ interface PropsType{
   // title: string;
 }
 
-export default function App({}: PropsType) {
+export default function App(props: any) {
   return (
     <View style={styles.container}>
       {/* <View style={styles.header}>          
@@ -20,7 +20,7 @@ export default function App({}: PropsType) {
       showsVerticalScrollIndicator
       >
         {
-          ParkList.map((e) => <Park park={e} />)
+          ParkList.map((e) => <Park navigation={props.navigation} park={e} />)
         }
       </ScrollView>  
     </View>
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderColor: '#111',
     width: Dimensions.get('screen').width,
+    marginBottom: 20,
   },
   header: {
     flexDirection: 'row',

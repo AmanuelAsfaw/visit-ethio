@@ -14,13 +14,19 @@ interface PropsType {
 
 // type NavigationProps = NavigationProps<StackParamList>
 
-export default function App({ event }:PropsType) {
+export default function EventComponent(props : any) {
+  const { event, navigation }: { event : EventInterface, navigation: any }= props
   console.log(`../../../assets${event.image}`);
-  const navigation = useNavigation()
+  // const navigation = props.navigation
   
   const onPressCard = () => {
     //NavigationProps
-    // navigation.navigate('EventDetail')
+    console.log(props);
+    console.log('navigation');
+    console.log(navigation);
+    
+    // navigation.navigate('Home')
+    navigation.navigate('EventDetail', {event})
   }
 
   return (
@@ -35,7 +41,7 @@ export default function App({ event }:PropsType) {
                 <EvilIcons name="location" size={20} color="#dac111" />
                 <Text style={styles.locationText}>{event.location}</Text>
               </View>
-              <View style={styles.date}>
+              <View style={styles.date}> 
                 <Fontisto name="date" size={12} color="#ddd111" />
                 <Text style={styles.dateText}>{event.date}</Text>
               </View>

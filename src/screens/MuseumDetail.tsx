@@ -1,21 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { EventListComponent } from '../components';
-import EventDetail from '../components/Event/EventDetail';
-import { EventInterface } from '../data/event.data';
+import { ParkInterface } from '../data/park.data';
+import MuseumDetail from '../components/Museum/MuseumDetail';
 
 interface PropsType {
-    event: EventInterface | undefined
+  museum: ParkInterface | undefined
 }
   
-export default function EventDetailScreen(props: any) {
-    const event = props?.route?.params?.event
+export default function MuseumDetailScreen(props: any) {
+    const museum = props?.route?.params?.museum
     console.log('EventDetail props');
     console.log(props);
-    console.log(props?.route?.params?.event);
+    console.log(props?.route?.params?.museum);
     return (
         <View style={styles.container}>
-        {event && (<EventDetail {...props} navigation={props.navigation} event={event}/>)}
+        {museum && (<MuseumDetail {...props} navigation={props.navigation} museum={museum}/>)}
         <StatusBar style="auto" />
         </View>
     );

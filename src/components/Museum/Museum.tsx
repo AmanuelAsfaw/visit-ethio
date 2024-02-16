@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Image,Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Image,Text, View, Dimensions, TouchableOpacity } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import { MuseumInterface } from '../../data/museum.data';
@@ -9,15 +9,29 @@ interface PropsType {
   museum: MuseumInterface
 }
 
-export default function App({ museum }:PropsType) {
+export default function MuseumComponent(props : any) {
+  const { museum, navigation }: { museum : MuseumInterface, navigation: any } = props
   console.log(`../../../assets${museum.image}`);
   
   // const image = require(`../../../assets${museum.image}`)
   // console.log(image);
   
 
+  const onPressCard = () => {
+    //NavigationProps
+    console.log(props);
+    console.log('navigation');
+    console.log(navigation);
+    console.log(museum);
+    
+    // navigation.navigate('Home')
+    navigation.navigate('MuseumDetail', {museum})
+  }
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => onPressCard()}>
         <View style={{flex: 2, flexDirection: 'row'}}>
             <Image style={ styles.image} source={museum.image} />
             <View style={{ flex: 3,paddingHorizontal: 5}}>
@@ -33,7 +47,7 @@ export default function App({ museum }:PropsType) {
             </View>
         </View>
       <StatusBar style="auto" />
-    </View>
+    </TouchableOpacity>
   );
 }
 

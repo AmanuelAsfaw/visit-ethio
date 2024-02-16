@@ -7,7 +7,7 @@ interface PropsType{
   // title: string;
 }
 
-export default function App({}: PropsType) {
+export default function MuseumListComponent(props: any) {
   return (
     <View style={styles.container}>
       {/* <View style={styles.header}>          
@@ -18,7 +18,7 @@ export default function App({}: PropsType) {
       // scrollEventThrottle={16}    
       showsVerticalScrollIndicator
       >
-        {MuseumList.map((e) => <Museum key={'museum'+e.id.toString()} museum={e}/>)}
+        {MuseumList.map((e) => <Museum navigation={props.navigation}  key={'museum'+e.id.toString()} museum={e}/>)}
       </ScrollView>  
     </View>
   );
