@@ -23,7 +23,7 @@ export default function App() {
           setSelected={(val: string) => setLanguageSelected(val)} 
           data={data} 
           save="value"
-          defaultOption={{ key:'1', value:'Mobiles' }}
+          defaultOption={{ key:'1', value:'Languages' }}
           boxStyles={{
               borderWidth: 0,
               shadowColor:'#000',

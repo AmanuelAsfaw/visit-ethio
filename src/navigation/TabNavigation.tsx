@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { EventScreen, HomeScreen, MuseumAndParkScreen, ScannerScreen, SettingsScreen } from '../screens';
 import { AntDesign, Ionicons, MaterialIcons, Zocial } from '@expo/vector-icons';
 import { EventScreenNavigator, HomeScreenNavigator, MuseumAndParkScreenNavigator } from './StackNavigation';
+import { BackgroundColor, ThemType } from '../theme';
 
 const Tab = createBottomTabNavigator()
 
@@ -17,7 +18,8 @@ const screenOptions = {
       left: 0,
       elevation: 0,
       height: 60,
-      background: "#fff"
+      // background: "#fff",
+      background: BackgroundColor[ThemType]
     }
 }
 
@@ -50,7 +52,7 @@ export default function TabNavigation() {
             name='Home' 
             component={HomeScreenNavigator}
             options={{
-                tabBarIcon:(focused)=> TabBarIcon(focused.focused,1,'Home')
+                tabBarIcon:(focused)=> TabBarIcon(focused.focused,1,'Home'),
             }}
             />   
             <Tab.Screen 

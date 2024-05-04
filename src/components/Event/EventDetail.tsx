@@ -6,6 +6,8 @@ import { EvilIcons, Fontisto } from '@expo/vector-icons';
 // import PanoramaView from "@lightbase/react-native-panorama-view";
 // import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 import { WebView } from 'react-native-webview';
+import { color } from '@rneui/base';
+import { BackgroundColor, TextColor, ThemType } from '../../theme';
 // import { PanoramaView } from 'react-native-360';
 interface PropsType {
     event: EventInterface
@@ -49,7 +51,7 @@ export default function EventDetail({ event }: PropsType) {
             </View>
           </View>
           
-          <Text>{event.description}</Text>
+          <Text style={styles.description}>{event.description}</Text>
         </View>
         {/* <WebView
           style={styles.container}
@@ -65,10 +67,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
+    backgroundColor: BackgroundColor[ThemType]
   },
   image: {
     flex:1,
@@ -87,6 +90,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 25,
     marginBottom: 15,
+    color: TextColor[ThemType]
   },
   viewer: {
     height: 230,
@@ -94,16 +98,22 @@ const styles = StyleSheet.create({
   location: {
     flexDirection: 'row',
     marginTop: 10,
+    color: TextColor[ThemType]
   },
   locationText: {
     fontSize: 16,
+    color: TextColor[ThemType]
   },
   dateText: {
     fontSize: 12,
     marginLeft: 5,
+    color: TextColor[ThemType]
   },
   date: {
     flexDirection: 'row',
     marginTop: 10,
   },
+  description: {
+    color: TextColor[ThemType]
+  }
 });

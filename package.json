@@ -30,7 +30,8 @@
     "react-native-dropdown-select-list": "^2.0.4",
     "react-native-qrcode-scanner": "^1.5.5",
     "react-native-webview": "^13.8.1",
-    "react-photo-sphere-viewer": "^4.2.1-psv5.6.0"
+    "react-photo-sphere-viewer": "^4.2.1-psv5.6.0",
+    "expo-dev-client": "~2.4.13"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

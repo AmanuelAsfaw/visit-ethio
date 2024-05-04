@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { EventListComponent } from '../components';
 import EventDetail from '../components/Event/EventDetail';
 import { EventInterface } from '../data/event.data';
+import { TextColor, ThemType } from '../theme';
 
 interface PropsType {
     event: EventInterface | undefined
@@ -24,7 +25,7 @@ export default function EventDetailScreen(props: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    color: TextColor[ThemType],
     alignItems: 'center', 
     // justifyContent: 'center',
     // marginTop: 40,
